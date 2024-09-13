@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708290756821",
+    "project_id": "soulei",
+    "storage_bucket": "soulei.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708290756821:android:f4c5a04474eb1ae4ca225c",
+        "android_client_info": {
+          "package_name": "com.example.panda_events"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708290756821-8bv4895q6ljaimga94fj8o9cqfm5u72v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCubEFIeKWWrxzNxU_1ZipuhSXUlCgWHcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708290756821-8bv4895q6ljaimga94fj8o9cqfm5u72v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
