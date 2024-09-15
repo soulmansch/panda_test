@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:panda_events/provider/event_details_screen_provider.dart';
 
 import '../models/event_model.dart';
+import '../util/helpers.dart';
 import 'create_edit_event_screen.dart';
 import 'loading_screen.dart';
 
@@ -40,7 +41,7 @@ class EventDetailScreen extends StatelessWidget {
                 ),
               ],
             ),
-            body: StreamBuilder<EventModel>(
+            body: StreamBuilder<EventModel?>(
               stream: provider.eventStream,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -50,8 +51,14 @@ class EventDetailScreen extends StatelessWidget {
                 } else if (!snapshot.hasData) {
                   return const Center(child: Text('No Event Data'));
                 }
+                if (snapshot.data == null) {
+                  return const Center(
+                    child: Text("Not found"),
+                  );
+                }
 
                 final event = snapshot.data!;
+
                 return Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
@@ -66,6 +73,8 @@ class EventDetailScreen extends StatelessWidget {
                       Text('Organizer: ${event.organizer}'),
                       const SizedBox(height: 8),
                       Text('Event Type: ${event.eventType.toDisplayString()}'),
+                      const SizedBox(height: 8),
+                      Text('Date: ${getFormattedDate(event.date)}'),
                     ],
                   ),
                 );

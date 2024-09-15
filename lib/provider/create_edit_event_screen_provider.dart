@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:panda_events/models/event_model.dart';
-import 'package:panda_events/services/events_firestore_service.dart';
+import 'package:panda_events/services/events_api_service.dart';
 import 'package:panda_events/util/enums/events_types_enums.dart';
 
 class CreateEditEventScreenProvider with ChangeNotifier {
-  final EventsFirestoreService _service = EventsFirestoreService();
+  final EventsApiService _service = EventsApiService();
   EventModel _eventModel = EventModel.newOne();
   bool _isLoading = false;
 
@@ -19,7 +19,7 @@ class CreateEditEventScreenProvider with ChangeNotifier {
       if (id == null || id.isEmpty) {
         _eventModel = EventModel.newOne();
       } else {
-        _eventModel = await _service.getEventById(id);
+        _eventModel = await _service.getEventById(id) ?? EventModel.newOne();
       }
     } finally {
       _isLoading = false;
@@ -44,7 +44,6 @@ class CreateEditEventScreenProvider with ChangeNotifier {
       } catch (e) {
         null;
       }
-      ;
     }
   }
 
@@ -54,6 +53,7 @@ class CreateEditEventScreenProvider with ChangeNotifier {
     String? location,
     String? organizer,
     EventsTypesEnums? eventType,
+    DateTime? date,
     bool notify = false,
   }) {
     _eventModel = _eventModel.copyWith(
@@ -62,6 +62,7 @@ class CreateEditEventScreenProvider with ChangeNotifier {
       location: location,
       organizer: organizer,
       eventType: eventType,
+      date: date,
     );
     if (notify) {
       notifyListeners();

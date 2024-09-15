@@ -43,3 +43,4 @@ app.*.map.json
 /android/app/release
 
 backend/functions/src/serviceAccount.json
+backend/functions/lib/serviceAccount.json

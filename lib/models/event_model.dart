@@ -9,6 +9,7 @@ class EventModel extends Equatable {
   final String location;
   final String organizer;
   final EventsTypesEnums eventType;
+  final DateTime date;
 
   const EventModel({
     required this.id,
@@ -17,6 +18,7 @@ class EventModel extends Equatable {
     required this.location,
     required this.organizer,
     required this.eventType,
+    required this.date,
   });
 
   @override
@@ -24,6 +26,14 @@ class EventModel extends Equatable {
 
   // Convert from Map to EventModel
   factory EventModel.fromMap(Map<String, dynamic> map) {
+    DateTime parsedDate = DateTime.now();
+
+    // Safely handle date conversion
+    if (map['date'] is Timestamp) {
+      parsedDate = (map['date'] as Timestamp).toDate();
+    } else if (map['date'] is DateTime) {
+      parsedDate = map['date'] as DateTime;
+    }
     return EventModel(
       id: map['id'] ?? '',
       title: map['title'] ?? '',
@@ -32,6 +42,7 @@ class EventModel extends Equatable {
       organizer: map['organizer'] ?? '',
       eventType: EventsTypesEnumsExtension.fromString(
           map['eventType'] ?? EventsTypesEnums.other.toShortString()),
+      date: parsedDate,
     );
   }
 
@@ -44,6 +55,7 @@ class EventModel extends Equatable {
       'location': location,
       'organizer': organizer,
       'eventType': eventType.toShortString(),
+      'date': Timestamp.fromDate(date),
     };
   }
 
@@ -76,6 +88,7 @@ class EventModel extends Equatable {
     String? location,
     String? organizer,
     EventsTypesEnums? eventType,
+    DateTime? date,
   }) {
     return EventModel(
       id: id ?? this.id,
@@ -84,6 +97,7 @@ class EventModel extends Equatable {
       location: location ?? this.location,
       organizer: organizer ?? this.organizer,
       eventType: eventType ?? this.eventType,
+      date: date ?? this.date,
     );
   }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:panda_events/models/event_model.dart';
-import 'package:panda_events/services/events_firestore_service.dart';
+import 'package:panda_events/services/events_api_service.dart';
 import 'package:panda_events/util/enums/events_types_enums.dart';
 
 class EventListScreenProvider with ChangeNotifier {
-  final EventsFirestoreService _service = EventsFirestoreService();
+  final EventsApiService _service = EventsApiService();
   Stream<List<EventModel>>? _eventsStream;
   EventsTypesEnums? _selectedEventType;
 

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:panda_events/util/enums/events_types_enums.dart';
 
 import '../provider/create_edit_event_screen_provider.dart';
+import '../util/helpers.dart';
 import 'loading_screen.dart';
 
 class CreateEditEventScreen extends StatelessWidget {
@@ -83,6 +84,23 @@ class CreateEditEventScreen extends StatelessWidget {
                       onChanged: (value) {
                         provider.updateEventModel(eventType: value);
                       },
+                    ),
+                    const SizedBox(height: 8),
+                    GestureDetector(
+                      onTap: () {
+                        showDatePicker(
+                          context: context,
+                          initialDate: provider.eventModel.date,
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(2100),
+                        ).then((pickedDate) {
+                          if (pickedDate != null) {
+                            provider.updateEventModel(date: pickedDate);
+                          }
+                        });
+                      },
+                      child: Text(
+                          'Date: ${getFormattedDate(provider.eventModel.date)}'),
                     ),
                   ],
                 ),
