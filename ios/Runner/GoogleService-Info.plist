@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyD64egVoKMdt7cV1weOjP3yd8pN1URJpi8</string>
+	<string>AIzaSyC9hs2su7_yvypXQdJtnOfPQEGu3NxQlLc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>708290756821</string>
+	<string>185449773863</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.pandaEvents</string>
 	<key>PROJECT_ID</key>
-	<string>soulei</string>
+	<string>privacies</string>
 	<key>STORAGE_BUCKET</key>
-	<string>soulei.appspot.com</string>
+	<string>privacies.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:708290756821:ios:abb0fc4e26058e10ca225c</string>
+	<string>1:185449773863:ios:d41d5e0ed8bdb352064702</string>
 </dict>
 </plist>

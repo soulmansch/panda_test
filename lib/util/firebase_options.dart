@@ -41,48 +41,46 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAUB6vtzKQweqLL3xfKmnQ2ULNpXK-CQ18',
-    appId: '1:708290756821:web:69c7711c53392973ca225c',
-    messagingSenderId: '708290756821',
-    projectId: 'soulei',
-    authDomain: 'soulei.firebaseapp.com',
-    storageBucket: 'soulei.appspot.com',
-    measurementId: 'G-RBXZRFT5YD',
+    apiKey: 'AIzaSyDshCKI7pPpogidv5F96DbbvrKpaPI43hs',
+    appId: '1:185449773863:web:ac305d0c507e0e41064702',
+    messagingSenderId: '185449773863',
+    projectId: 'privacies',
+    authDomain: 'privacies.firebaseapp.com',
+    storageBucket: 'privacies.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCubEFIeKWWrxzNxU_1ZipuhSXUlCgWHcY',
-    appId: '1:708290756821:android:f4c5a04474eb1ae4ca225c',
-    messagingSenderId: '708290756821',
-    projectId: 'soulei',
-    storageBucket: 'soulei.appspot.com',
+    apiKey: 'AIzaSyD0IeFDmDXhx8zYbMUhO7Gf2_QRGbxLW0I',
+    appId: '1:185449773863:android:469d8cee629908ca064702',
+    messagingSenderId: '185449773863',
+    projectId: 'privacies',
+    storageBucket: 'privacies.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD64egVoKMdt7cV1weOjP3yd8pN1URJpi8',
-    appId: '1:708290756821:ios:abb0fc4e26058e10ca225c',
-    messagingSenderId: '708290756821',
-    projectId: 'soulei',
-    storageBucket: 'soulei.appspot.com',
+    apiKey: 'AIzaSyC9hs2su7_yvypXQdJtnOfPQEGu3NxQlLc',
+    appId: '1:185449773863:ios:d41d5e0ed8bdb352064702',
+    messagingSenderId: '185449773863',
+    projectId: 'privacies',
+    storageBucket: 'privacies.appspot.com',
     iosBundleId: 'com.example.pandaEvents',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD64egVoKMdt7cV1weOjP3yd8pN1URJpi8',
-    appId: '1:708290756821:ios:abb0fc4e26058e10ca225c',
-    messagingSenderId: '708290756821',
-    projectId: 'soulei',
-    storageBucket: 'soulei.appspot.com',
+    apiKey: 'AIzaSyC9hs2su7_yvypXQdJtnOfPQEGu3NxQlLc',
+    appId: '1:185449773863:ios:d41d5e0ed8bdb352064702',
+    messagingSenderId: '185449773863',
+    projectId: 'privacies',
+    storageBucket: 'privacies.appspot.com',
     iosBundleId: 'com.example.pandaEvents',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAUB6vtzKQweqLL3xfKmnQ2ULNpXK-CQ18',
-    appId: '1:708290756821:web:16658f85fbbe0f16ca225c',
-    messagingSenderId: '708290756821',
-    projectId: 'soulei',
-    authDomain: 'soulei.firebaseapp.com',
-    storageBucket: 'soulei.appspot.com',
-    measurementId: 'G-8TY5F06S8Y',
+    apiKey: 'AIzaSyDshCKI7pPpogidv5F96DbbvrKpaPI43hs',
+    appId: '1:185449773863:web:bc9d0b7467947fe1064702',
+    messagingSenderId: '185449773863',
+    projectId: 'privacies',
+    authDomain: 'privacies.firebaseapp.com',
+    storageBucket: 'privacies.appspot.com',
   );
 }

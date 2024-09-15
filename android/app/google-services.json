@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "708290756821",
-    "project_id": "soulei",
-    "storage_bucket": "soulei.appspot.com"
+    "project_number": "185449773863",
+    "project_id": "privacies",
+    "storage_bucket": "privacies.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:708290756821:android:f4c5a04474eb1ae4ca225c",
+        "mobilesdk_app_id": "1:185449773863:android:469d8cee629908ca064702",
         "android_client_info": {
           "package_name": "com.example.panda_events"
         }
       },
       "oauth_client": [
         {
-          "client_id": "708290756821-8bv4895q6ljaimga94fj8o9cqfm5u72v.apps.googleusercontent.com",
+          "client_id": "185449773863-2cchn8i2ifpm6lj50unfjuvkcg2v87mb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCubEFIeKWWrxzNxU_1ZipuhSXUlCgWHcY"
+          "current_key": "AIzaSyD0IeFDmDXhx8zYbMUhO7Gf2_QRGbxLW0I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "708290756821-8bv4895q6ljaimga94fj8o9cqfm5u72v.apps.googleusercontent.com",
+              "client_id": "185449773863-2cchn8i2ifpm6lj50unfjuvkcg2v87mb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
