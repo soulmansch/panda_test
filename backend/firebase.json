@@ -1,6 +1,8 @@
 {
   "functions": [
     {
+      "memory": "512MB",
+      "timeoutSeconds": 60,
       "source": "functions",
       "codebase": "default",
       "ignore": [

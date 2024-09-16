@@ -55,7 +55,7 @@ class EventModel extends Equatable {
       'location': location,
       'organizer': organizer,
       'eventType': eventType.toShortString(),
-      'date': Timestamp.fromDate(date),
+      'date': date.toIso8601String(),
     };
   }
 

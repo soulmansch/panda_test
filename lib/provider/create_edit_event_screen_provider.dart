@@ -27,15 +27,16 @@ class CreateEditEventScreenProvider with ChangeNotifier {
     }
   }
 
-  Future<void> saveEvent(String? id, Map<String, dynamic> eventData) async {
+  Future<void> saveEvent(
+      BuildContext context, String? id, Map<String, dynamic> eventData) async {
     _isLoading = true;
     notifyListeners();
-
+    bool success = false;
     try {
       if (id == null || id.isEmpty) {
-        await _service.addEvent(eventData);
+        success = await _service.addEvent(eventData);
       } else {
-        await _service.updateEvent(id, eventData);
+        success = await _service.updateEvent(id, eventData);
       }
     } finally {
       try {
@@ -44,6 +45,17 @@ class CreateEditEventScreenProvider with ChangeNotifier {
       } catch (e) {
         null;
       }
+    }
+
+    if (!success) {
+      const snackBar = SnackBar(
+        content: Text('Something went wrong'),
+        duration: Duration(seconds: 2),
+        backgroundColor: Colors.blue,
+      );
+
+      // Show the SnackBar
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
   }
 

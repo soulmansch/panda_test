@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:panda_events/models/event_model.dart';
 import 'package:panda_events/services/events_api_service.dart';
@@ -5,13 +7,14 @@ import 'package:panda_events/util/enums/events_types_enums.dart';
 
 class EventListScreenProvider with ChangeNotifier {
   final EventsApiService _service = EventsApiService();
-  Stream<List<EventModel>>? _eventsStream;
+  late final StreamController<List<EventModel>> _eventsController;
   EventsTypesEnums? _selectedEventType;
 
-  Stream<List<EventModel>>? get eventsStream => _eventsStream;
+  Stream<List<EventModel>> get eventsStream => _eventsController.stream;
   EventsTypesEnums? get selectedEventType => _selectedEventType;
 
   EventListScreenProvider() {
+    _eventsController = StreamController<List<EventModel>>.broadcast();
     loadEvents(); // Initialize the stream when the provider is created
   }
 
@@ -19,23 +22,20 @@ class EventListScreenProvider with ChangeNotifier {
     _selectedEventType = eventType;
     notifyListeners();
 
-    _eventsStream = _service.getEventsStream(eventType: _selectedEventType);
-    _eventsStream!.listen(
+    _service.getEventsStream(eventType: _selectedEventType).listen(
       (data) {
-        notifyListeners();
-      },
-      onDone: () {
-        notifyListeners();
+        _eventsController.add(data);
       },
       onError: (error) {
-        notifyListeners();
+        // Handle error appropriately
+        _eventsController.addError(error);
       },
     );
   }
 
   @override
   void dispose() {
-    _eventsStream = null;
+    _eventsController.close();
     super.dispose();
   }
 }
