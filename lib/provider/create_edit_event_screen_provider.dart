@@ -3,8 +3,11 @@ import 'package:panda_events/models/event_model.dart';
 import 'package:panda_events/services/events_api_service.dart';
 import 'package:panda_events/util/enums/events_types_enums.dart';
 
+import '../services/events_firebase_service.dart';
+
 class CreateEditEventScreenProvider with ChangeNotifier {
-  final EventsApiService _service = EventsApiService();
+  final EventsApiService _serviceAPI = EventsApiService();
+  final EventsFirestoreService _serviceFirestore = EventsFirestoreService();
   EventModel _eventModel = EventModel.newOne();
   bool _isLoading = false;
 
@@ -19,7 +22,7 @@ class CreateEditEventScreenProvider with ChangeNotifier {
       if (id == null || id.isEmpty) {
         _eventModel = EventModel.newOne();
       } else {
-        _eventModel = await _service.getEventById(id) ?? EventModel.newOne();
+        _eventModel = await _serviceFirestore.getEventById(id);
       }
     } finally {
       _isLoading = false;
@@ -34,9 +37,9 @@ class CreateEditEventScreenProvider with ChangeNotifier {
     bool success = false;
     try {
       if (id == null || id.isEmpty) {
-        success = await _service.addEvent(eventData);
+        success = await _serviceAPI.addEvent(eventData);
       } else {
-        success = await _service.updateEvent(id, eventData);
+        success = await _serviceAPI.updateEvent(id, eventData);
       }
     } finally {
       try {

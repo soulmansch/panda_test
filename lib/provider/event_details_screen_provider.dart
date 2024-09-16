@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:panda_events/models/event_model.dart';
-import 'package:panda_events/services/events_api_service.dart';
+
+import '../services/events_firebase_service.dart';
 
 class EventDetailsScreenProvider with ChangeNotifier {
-  final EventsApiService _service = EventsApiService();
+  final EventsFirestoreService _service = EventsFirestoreService();
   late Stream<EventModel?> _eventStream;
 
   EventDetailsScreenProvider(String eventId) {

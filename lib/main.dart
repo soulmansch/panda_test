@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:provider/provider.dart';
-import 'provider/event_list_screen_provider.dart';
 import 'screens/event_list_screen.dart';
 import 'util/firebase_options.dart';
 
@@ -18,19 +16,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<EventListScreenProvider>(
-            create: (_) => EventListScreenProvider()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Panda Events',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const EventsListScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Panda Events',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: const EventsListScreen(),
     );
   }
 }

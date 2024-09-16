@@ -33,6 +33,8 @@ class EventModel extends Equatable {
       parsedDate = (map['date'] as Timestamp).toDate();
     } else if (map['date'] is DateTime) {
       parsedDate = map['date'] as DateTime;
+    } else if (map['date'] is String) {
+      parsedDate = DateTime.tryParse(map['date']) ?? parsedDate;
     }
     return EventModel(
       id: map['id'] ?? '',
